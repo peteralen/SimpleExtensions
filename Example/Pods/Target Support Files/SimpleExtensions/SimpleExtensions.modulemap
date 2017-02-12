@@ -1,0 +1,6 @@
+framework module SimpleExtensions {
+  umbrella header "SimpleExtensions-umbrella.h"
+
+  export *
+  module * { export * }
+}

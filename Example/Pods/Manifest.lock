@@ -1,0 +1,16 @@
+PODS:
+  - SimpleExtensions (0.1.0)
+
+DEPENDENCIES:
+  - SimpleExtensions (from `../`)
+
+EXTERNAL SOURCES:
+  SimpleExtensions:
+    :path: ../
+
+SPEC CHECKSUMS:
+  SimpleExtensions: 12f50780828a17339cc427a13e91a14ce4c121e7
+
+PODFILE CHECKSUM: 7878da96f14ebe4ac0e624f2d37a5246f369bba1
+
+COCOAPODS: 1.2.0

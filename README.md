@@ -22,7 +22,7 @@ pod "SimpleExtensions"
 
 ## Author
 
-peteralen, alenpeter@live.com
+Alen Peter, alenpeter@live.com
 
 ## License
 

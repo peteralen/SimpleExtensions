@@ -1,0 +1,22 @@
+{
+  "name": "SimpleExtensions",
+  "version": "0.1.0",
+  "summary": "A short description of SimpleExtensions.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/peteralen/SimpleExtensions",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "peteralen": "alenpeter@live.com"
+  },
+  "source": {
+    "git": "https://github.com/peteralen/SimpleExtensions.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SimpleExtensions/Classes/**/*"
+}
