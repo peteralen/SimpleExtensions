@@ -5,6 +5,15 @@
 [![License](https://img.shields.io/cocoapods/l/SimpleExtensions.svg?style=flat)](http://cocoapods.org/pods/SimpleExtensions)
 [![Platform](https://img.shields.io/cocoapods/p/SimpleExtensions.svg?style=flat)](http://cocoapods.org/pods/SimpleExtensions)
 
+## Installation
+
+SimpleExtensions is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "SimpleExtensions"
+```
+
 ## Usage
 
 Import SimpleExtensions into your view controller:
@@ -29,15 +38,6 @@ self.view.setBackground("myBackgroundImage")
 ```
 
 <!--## Requirements-->
-
-## Installation
-
-SimpleExtensions is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "SimpleExtensions"
-```
 
 ## Author
 
