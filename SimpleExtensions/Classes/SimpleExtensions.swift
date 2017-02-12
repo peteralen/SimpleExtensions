@@ -34,7 +34,7 @@ public extension UIView
         self.sendSubview(toBack: imageViewBackground)
     }
     
-    func shake(color: UIColor = UIColor.red, height: CGFloat? = nil , duration: Double = 0.08, additionalViewToChangeColor: UIView? = nil)
+    func shake(color: UIColor? = nil, height: CGFloat? = nil , duration: Double = 0.08, additionalViewToChangeColor: UIView? = nil)
     {
         self.superview?.isUserInteractionEnabled = false
         let additionalViewColor = additionalViewToChangeColor?.backgroundColor
@@ -42,9 +42,9 @@ public extension UIView
         let originalHeight = self.frame.size.height
         let originalCenterX = self.center.x
         
-        self.backgroundColor = color
+        self.backgroundColor = color != nil ? color : originalColor
         UIView.animate(withDuration: 0.5) {
-            additionalViewToChangeColor?.backgroundColor = color
+            additionalViewToChangeColor?.backgroundColor = color != nil ? color : originalColor
         }
         
         self.frame.size.height = (height != nil ? height : self.frame.size.height + 2)!
