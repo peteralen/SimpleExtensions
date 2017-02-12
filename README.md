@@ -5,11 +5,30 @@
 [![License](https://img.shields.io/cocoapods/l/SimpleExtensions.svg?style=flat)](http://cocoapods.org/pods/SimpleExtensions)
 [![Platform](https://img.shields.io/cocoapods/p/SimpleExtensions.svg?style=flat)](http://cocoapods.org/pods/SimpleExtensions)
 
-## Example
+## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+Import SimpleExtensions into your view controller:
 
-## Requirements
+```ruby
+import SimpleExtensions
+```
+
+Then you can use the extensions as follows:
+
+```ruby
+swipeLabel.glow()
+```
+```ruby
+submitButton.shake()
+```
+```ruby
+profilePictureView.makeCircle()
+```
+```ruby
+self.view.setBackground("myBackgroundImage")
+```
+
+<!--## Requirements-->
 
 ## Installation
 

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SimpleExtensions'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'A couple of extentions which could come in handy while developing iOS applications'
 
 # This description is used to generate tags and improve search results.
@@ -26,7 +26,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Alen Peter' => 'alenpeter@live.com' }
   s.source           = { :git => 'https://github.com/peteralen/SimpleExtensions.git', :tag => s.version.to_s }
-  s.social_media_url = 'https://twitter.com/ialenpeter'
+  # s.social_media_url = 'https://twitter.com/ialenpeter'
 
   s.ios.deployment_target = '8.0'
 
