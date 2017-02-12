@@ -8,7 +8,7 @@
 import UIKit
 
 
-extension UIImageView
+public extension UIImageView
 {
     // to make an imageview circular:
     func makeCircle()
@@ -20,7 +20,7 @@ extension UIImageView
         self.clipsToBounds = true
     }
 }
-extension UIView
+public extension UIView
 {
     // to set background image for a view:
     func setBackground(_ imageName: String)
@@ -72,7 +72,7 @@ extension UIView
                             self.superview?.isUserInteractionEnabled = true }}}}}
     }
 }
-extension UILabel
+public extension UILabel
 {
     func glow(stopAfter: Double? = 2)
     {
