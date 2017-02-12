@@ -50,26 +50,26 @@ public extension UIView
         self.frame.size.height = (height != nil ? height : self.frame.size.height + 2)!
         
         UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut, .autoreverse], animations: {
-            self.center.x = originalCenterX + 4
+        self.center.x = originalCenterX + 4
         }) { (true) in
-            UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut, .autoreverse], animations: {
-                self.center.x = originalCenterX - 7
-            }) { (true) in
-                UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut, .autoreverse], animations: {
-                    self.center.x = originalCenterX + 6
-                }) { (true) in
-                    UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut, .autoreverse], animations: {
-                        self.center.x = originalCenterX - 5
-                    }) { (true) in
-                        UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut, .autoreverse], animations: {
-                            self.center.x = originalCenterX
-                        }) { (true) in
-                            self.frame.size.height = originalHeight
-                            self.backgroundColor = originalColor
-                            UIView.animate(withDuration: 0.5) {
-                                additionalViewToChangeColor?.backgroundColor = additionalViewColor
-                            }
-                            self.superview?.isUserInteractionEnabled = true }}}}}
+        UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut, .autoreverse], animations: {
+        self.center.x = originalCenterX - 7
+        }) { (true) in
+        UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut, .autoreverse], animations: {
+        self.center.x = originalCenterX + 6
+        }) { (true) in
+        UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut, .autoreverse], animations: {
+        self.center.x = originalCenterX - 5
+        }) { (true) in
+        UIView.animate(withDuration: duration, delay: 0, options: [.curveEaseInOut, .autoreverse], animations: {
+        self.center.x = originalCenterX
+        }) { (true) in
+        self.frame.size.height = originalHeight
+        self.backgroundColor = originalColor
+        UIView.animate(withDuration: 0.5) {
+        additionalViewToChangeColor?.backgroundColor = additionalViewColor
+        }
+        self.superview?.isUserInteractionEnabled = true }}}}}
     }
 }
 public extension UILabel
