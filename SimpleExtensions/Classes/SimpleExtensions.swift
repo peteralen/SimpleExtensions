@@ -44,7 +44,10 @@ public extension UIView
         
         self.backgroundColor = color != nil ? color : originalColor
         UIView.animate(withDuration: 0.5) {
-            additionalViewToChangeColor?.backgroundColor = color != nil ? color : originalColor
+            if color != nil
+            {
+                additionalViewToChangeColor?.backgroundColor = color
+            }
         }
         
         self.frame.size.height = (height != nil ? height : self.frame.size.height + 2)!
