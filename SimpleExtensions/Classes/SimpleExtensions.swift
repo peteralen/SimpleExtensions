@@ -43,9 +43,9 @@ public extension UIView
         let originalCenterX = self.center.x
         
         self.backgroundColor = color != nil ? color : originalColor
-        UIView.animate(withDuration: 0.5) {
-            if color != nil
-            {
+        if color != nil
+        {
+            UIView.animate(withDuration: 0.5) {
                 additionalViewToChangeColor?.backgroundColor = color
             }
         }
