@@ -71,6 +71,71 @@ public extension UIView
         }
         self.superview?.isUserInteractionEnabled = true }}}}}
     }
+    
+    func addDashedBorder(color: UIColor) {
+        
+        let shapeLayer:CAShapeLayer = CAShapeLayer()
+        let frameSize = self.frame.size
+        let shapeRect = CGRect(x: 0, y: 0, width: frameSize.width, height: frameSize.height)
+        
+        shapeLayer.bounds = shapeRect
+        shapeLayer.position = CGPoint(x: frameSize.width/2, y: frameSize.height/2)
+        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.strokeColor = color.cgColor
+        shapeLayer.lineWidth = 2
+        shapeLayer.lineJoin = kCALineJoinRound
+        shapeLayer.lineDashPattern = [6,3]
+        shapeLayer.path = UIBezierPath(roundedRect: shapeRect, cornerRadius: 5).cgPath
+        
+        self.layer.addSublayer(shapeLayer)
+    }
+    
+    func addShadow(color: UIColor, opacity: Float, radius: CGFloat, offset: CGSize)
+    {
+        let view = self
+        view.layer.shadowColor = color.cgColor
+        view.layer.shadowOffset = offset
+        view.layer.shadowOpacity = opacity
+        view.layer.shadowRadius = radius
+        view.layer.masksToBounds = false
+    }
+    
+    func makeCapsuleShape(color : UIColor)
+    {
+        let view = self
+        let layer = view.layer
+        layer.borderWidth = 0.5
+        layer.borderColor = color.cgColor
+        layer.cornerRadius = layer.frame.size.height/2
+        
+    }
+    
+    func makeViewCircle()
+    {
+        let view = self
+        let layer = view.layer
+        layer.cornerRadius = layer.frame.size.height/2
+        layer.masksToBounds = true
+        
+    }
+    
+    func makeShadowWithColor(color : UIColor)
+    {
+        let view = self
+        view.layer.shadowColor = color.cgColor;
+        view.layer.shadowOffset = CGSize(width: 5, height: -5);
+        view.layer.shadowOpacity = 1;
+        view.layer.shadowRadius = 25.0;
+    }
+    
+    func makeRoundedCorner(color : UIColor, radius : CGFloat)
+    {
+        let view = self
+        view.layer.cornerRadius = radius
+        view.layer.borderWidth = 1.0
+        view.layer.borderColor = color.cgColor
+        view.clipsToBounds = true
+    }
 }
 public extension UILabel
 {
@@ -109,4 +174,68 @@ public extension UILabel
             self.layer.mask = nil
         }
     }
+    
+    func setLineHeight(lineHeight: CGFloat, lineSpacing: CGFloat) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = lineSpacing
+        paragraphStyle.lineHeightMultiple = lineHeight
+        paragraphStyle.alignment = self.textAlignment
+        
+        let attrString = NSMutableAttributedString(string: self.text!)
+        attrString.addAttribute(NSFontAttributeName, value: self.font, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSParagraphStyleAttributeName, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+        self.attributedText = attrString
+    }
 }
+
+public extension UITextField{
+    
+    func trimmedText() -> String {
+        if self.text != ""
+        {
+            let currentText = self.text
+            let trimmedText = currentText?.replacingOccurrences(of: " ", with: "")
+            return trimmedText!
+        }
+        else
+        {
+            return ""
+        }
+    }
+}
+
+public extension String
+{
+    func hexStringToUIColor () -> UIColor {
+        let hex = self
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.characters.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+}
+
+public extension Double {
+    /// Rounds the double to decimal places value
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
+}
+
+
