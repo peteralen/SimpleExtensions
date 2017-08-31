@@ -72,7 +72,8 @@ public extension UIView
         self.superview?.isUserInteractionEnabled = true }}}}}
     }
     
-    func addDashedBorder(color: UIColor) {
+    func addDashedBorder(color: UIColor)
+    {
         
         let shapeLayer:CAShapeLayer = CAShapeLayer()
         let frameSize = self.frame.size
@@ -175,7 +176,8 @@ public extension UILabel
         }
     }
     
-    func setLineHeight(lineHeight: CGFloat, lineSpacing: CGFloat) {
+    func setLineHeight(lineHeight: CGFloat, lineSpacing: CGFloat)
+    {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
         paragraphStyle.lineHeightMultiple = lineHeight
@@ -188,9 +190,11 @@ public extension UILabel
     }
 }
 
-public extension UITextField{
+public extension UITextField
+{
     
-    func trimmedText() -> String {
+    func trimmedText() -> String
+    {
         if self.text != ""
         {
             let currentText = self.text
@@ -206,15 +210,19 @@ public extension UITextField{
 
 public extension String
 {
-    func hexStringToUIColor () -> UIColor {
+    //Convert Hex String to UIColor
+    func hexStringToUIColor () -> UIColor
+    {
         let hex = self
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         
-        if (cString.hasPrefix("#")) {
+        if (cString.hasPrefix("#"))
+        {
             cString.remove(at: cString.startIndex)
         }
         
-        if ((cString.characters.count) != 6) {
+        if ((cString.characters.count) != 6)
+        {
             return UIColor.gray
         }
         
@@ -230,9 +238,11 @@ public extension String
     }
 }
 
-public extension Double {
-    /// Rounds the double to decimal places value
-    func roundTo(places:Int) -> Double {
+public extension Double
+{
+    // Rounds the double to decimal places value
+    func roundTo(places:Int) -> Double
+    {
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
