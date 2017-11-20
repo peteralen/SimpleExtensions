@@ -11,11 +11,11 @@ import UIKit
 public extension UIImageView
 {
     // to make an imageview circular:
-    func makeCircle()
+    func makeCircle(borderWidth: CGFloat = 2, borderColor: UIColor = UIColor.black)
     {
         self.layer.cornerRadius = self.frame.height/2
-        self.layer.borderWidth = 2
-        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor.cgColor
         self.layer.masksToBounds = true
         self.clipsToBounds = true
     }
